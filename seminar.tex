@@ -7,23 +7,45 @@
 \usepackage{hyperref}
 \usepackage[left=3.5cm,top=1.5cm,right=3cm,bottom=4cm]{geometry}
 \usepackage{mathtools}
+\usepackage{fancyhdr}
 
-\title{Matematika 3, Seminarski Rad}
-\author{
+\usepackage[T1]{fontenc}
+% Fonts:
+\usepackage{helvet} % Helvetica; phv
+\usepackage{palatino} % Palatino; ppl
+
+\gdef \title{Matematika 3, Seminarski Rad}
+\gdef \author{Tin Švagelj}
+\gdef \degree{Jednopredmetna Informatika}
+\gdef \university{
 Fakultet Informatike i Digitalnih Tehnologija,\\
-Sveučilište u Rijeci\\
-Tin Švagelj\\
+Sveučilište u Rijeci
 }
-\date{31. siječnja 2023.}
+\gdef \semguide{dr.sc. Marija Maksimović}
+\gdef \author{Tin Švagelj}
+\gdef \date{\today}
 
 \graphicspath{ {./images/} }
 
+%\pagestyle{fancy}
+%\fancyhead{}
+%\header and footer section
+%\renewcommand\headrulewidth{0.1pt}
+%\fancyhead[L]{\footnotesize \leftmark}
+%\fancyhead[R]{\footnotesize \thepage}
+%\renewcommand\headrulewidth{0pt}
+%\fancyfoot[R]{\small College of Engineering Trivandrum}
+%\renewcommand\footrulewidth{0.1pt}
+%\fancyfoot[C]{2020 - 2021}
+%\fancyfoot[L]{\small \title}
+
 \begin{document}
+
 \bibliography{ref}
 
 \pagenumbering{roman}
 
-\maketitle
+\include{cover.tex}
 
 % \include{coverpage}
 
@@ -255,6 +277,6 @@ Korištenjem \verb|numpy| i \verb|matplotlib| biblioteka u Pythonu, pomoću slje
 \pagenumbering{roman}
 \setcounter{page}{2}
 
-%\def\bibname{Literatura}
-%\printbibliography
+\def\bibname{Literatura}
+\printbibliography
 \end{document}
