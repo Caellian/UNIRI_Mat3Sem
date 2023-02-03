@@ -1,0 +1,7 @@
+\babel@toc {croatian}{}\relax 
+\contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Razrada}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Parcijalne derivacije prvog reda}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Stacionarne točke}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Parcijalne derivacije drugog reda}{5}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Zaključak}{7}{chapter.3}%
