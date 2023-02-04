@@ -1,12 +1,14 @@
 \chapter{Razrada}
 
-S obzirom da je zadana multivarijatna funkcija polinom, tj. racionalna je, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
+S obzirom da je zadana funkcija $f$ (1.1) racionalna, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
 Dakle domena funkcije je skup svih realnih brojeva:
 $$
     D(f) = \mathbb{R} \times \mathbb{R} = \mathbb{R}^2
 $$
 
 \section{Parcijalne derivacije prvog reda}
+
+Kako bismo odredili gradijent funkcije $f$, trebamo prvo odrediti parcijalne derivacije te funkcije po $x$ i $y$, pri čemu se služimo pravilima 1.4, 1.5 i 1.6:
 
 \begin{align*}
     \frac{\partial f}{\partial x} & = \frac{\partial}{\partial x} (2x^3 + 2y^3 - 36xy + 430) \\
@@ -17,14 +19,26 @@ $$
     \frac{\partial f}{\partial y} & = \frac{\partial}{\partial y} (2x^3 + 2y^3 - 36xy + 430) \\
     & = \frac{\partial}{\partial y} 2x^3 + \frac{\partial}{\partial y}2y^3 - \frac{\partial}{\partial y}36xy + \frac{\partial}{\partial y}430 \\
     & = 0 + 6y^2 - 36x + 0\\
-    & = 6y^2 - 36x
+    & = 6y^2 - 36x \textnormal{.}
 \end{align*}
+
+S obzirom da je domena zadane funkcije $f$ skup svih realnih brojeva, ne trebamo isključiti rješenja iz dobivenih izraza.
 
 \section{Gradijent funkcije}
 
-Određujemo gradijent funkcije ()
+Određujemo gradijent funkcije $f$ uz dobivene parcijalne derivacije na osnovu formule 1.2:
+
+\begin{equation}
+    \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
+        6x^2 - 36y \\
+        6y^2 - 36x
+    \end{bmatrix}\textnormal{,}
+\end{equation}
 
 \section{Ekstremi}
+
+Gradijent 2.1 izjednačujemo s nulom kako bi mu odredili nulte točke tj. ekstreme funkcije.
+To možemo izraziti kao sustav (1.3):
 
 $$
 \begin{cases}
@@ -40,29 +54,34 @@ Izrazimo $y$ iz prvog izraza,
     y & = \frac{6x^2}{36} = \frac{x^2}{6} \\
 \end{align*}
 
-te ga uvrstimo u drugi:
-\begin{align*}
-    6(\frac{x^2}{6})^2 - 36x & = 0 \\
-    x^4 - 36x & = 0
-\end{align*}
+te ga uvrštavamo u drugi kako bismo dobili jednadžbu za $x$eve nultih točaka gradijenta:
+\begin{align}
+    6(\frac{x^2}{6})^2 - 36x & = 0 \nonumber \\
+    x^4 - 36x & = 0 \textnormal{.}
+\end{align}
 
-, jedno rješenje $x_1 = 0$ dobivamo izlučivanjem $x$a iz izraza:
+Jedno rješenje ($x_1$) uočavamo nakon izlučivanja $x$a iz izraza:
 \begin{align*}
     x(x^3 - 36) &= 0 \\
-    x_1 &= 0
+    x_1 &= 0 \textnormal{.}
 \end{align*}
 
-drugi član umnoška nam daje drugo rješenje:
+Zaključujemo da je jedno rješenje $x_1 = 0$ jer ako je $x$ jednak nuli, onda će cijeli izraz 2.2 biti jednak nuli. \par
+
+Drugi član umnoška nam daje drugo rješenje:
 \begin{align*}
     x^3 - 36 &= 0 \\
     x^3 &= 36 \\
-    x &= \sqrt[3]{36} \\
-    x_2 &= \sqrt[3]{36},
+    x &= \sqrt[3]{36} \textnormal{,}
 \end{align*}
 
-zbog duplog pojavljivanja $x$a u zadanom polinomu se radi o funkciji simetričnoj s obzirom na ishodište te trebamo tretirati drugo rješenje kao da je njegov predznak uklonjen.
+ali zbog duplog pojavljivanja $x$a u zadanom polinomu se radi o funkciji simetričnoj s obzirom na ishodište te je zbog toga dobiveno rješenje zapravo dvojno rješenje:
 
-Tom logikom dobivamo 3 rješenja sustava:
+$$
+x_{2,3} = \pm \sqrt[3]{36} \textnormal{.}
+$$
+
+Time dobivamo 3 rješenja sustava za $x$:
 \begin{center}
 \begin{tabular}{c c c}
     $x_1 = 0$ & $x_2 = \sqrt[3]{36}$ & $x_3 = -\sqrt[3]{36}$\\
