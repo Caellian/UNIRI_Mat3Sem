@@ -4,15 +4,22 @@
 
 \documentclass[12pt,a4paper]{report}
 
-\usepackage{csquotes}
+\usepackage{graphicx} % \includegraphics [k=v] interface za uključivanje grafike (slika, PDFa, ...)
+\usepackage{bookmark} % generira ToC za PDF
+
+% Podrška za hrvatski
 \usepackage[croatian]{babel}
-\usepackage{amsmath, amsthm, amssymb}
-\usepackage{epsfig}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{csquotes}
+
+% Margine
 \usepackage[left=3.5cm,top=1.5cm,right=3cm,bottom=4cm]{geometry}
+
+% Simboli i naredbe za matematiku
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage{mathtools}
-\usepackage{bookmark}
+
+% Poveznice
+\usepackage{hyperref}
 
 % Blokovi s kodom
 \usepackage{minted}
@@ -22,15 +29,15 @@
 \usepackage[sorting=none,backend=biber,style=numeric]{biblatex}
 \addbibresource{ref.bib}
 
-\usepackage[T1]{fontenc}
 % Fonts:
+\usepackage[T1]{fontenc} % Allows specifying fonts
 \usepackage{helvet} % Helvetica; phv
 \usepackage{palatino} % Palatino; ppl
 
 \gdef \title{Seminarski rad}
 \gdef \class{Matematika 3}
 \gdef \author{Tin Švagelj}
-\gdef \degree{Jednopredmetna Informatika}
+\gdef \uniprogram{Jednopredmetna Informatika}
 \gdef \university{
 Fakultet Informatike i Digitalnih Tehnologija\\
 Rijeka
@@ -63,6 +70,7 @@ Rijeka
 \begin{document}
 
 \thispagestyle{empty}
+
 \begin{titlepage}
 	\begin{center}
 		\vspace*{\stretch{0.25}}
@@ -76,7 +84,7 @@ Rijeka
 		\vspace*{10pt}
 		student:\\
 		{\bf \author}\\
-		\UseFont{ppl} {\bfseries \degree}
+		\UseFont{ppl} {\bfseries \uniprogram}
 
 		\vspace*{\stretch{0.25}}
 		
@@ -88,7 +96,6 @@ Rijeka
 \pagenumbering{roman}
 
 \tableofcontents
-
 \newpage
 
 \setcounter{page}{1}
