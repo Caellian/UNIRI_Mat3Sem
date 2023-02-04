@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper]{report}
 
+\usepackage{csquotes}
 \usepackage[croatian]{babel}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{epsfig}
@@ -7,49 +8,76 @@
 \usepackage{hyperref}
 \usepackage[left=3.5cm,top=1.5cm,right=3cm,bottom=4cm]{geometry}
 \usepackage{mathtools}
+\usepackage{bookmark}
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{ref.bib}
+
 \usepackage{fancyhdr}
+\pagestyle{fancy}
 
 \usepackage[T1]{fontenc}
 % Fonts:
 \usepackage{helvet} % Helvetica; phv
 \usepackage{palatino} % Palatino; ppl
 
-\gdef \title{Matematika 3, Seminarski Rad}
+\gdef \title{Seminarski rad}
+\gdef \class{Matematika 3}
 \gdef \author{Tin Švagelj}
 \gdef \degree{Jednopredmetna Informatika}
 \gdef \university{
-Fakultet Informatike i Digitalnih Tehnologija,\\
-Sveučilište u Rijeci
+Fakultet Informatike i Digitalnih Tehnologija\\
+Rijeka
 }
 \gdef \semguide{dr.sc. Marija Maksimović}
 \gdef \author{Tin Švagelj}
 \gdef \date{\today}
 
-\graphicspath{ {./images/} }
+\graphicspath{{./figures/}}
 
-%\pagestyle{fancy}
-%\fancyhead{}
-%\header and footer section
-%\renewcommand\headrulewidth{0.1pt}
-%\fancyhead[L]{\footnotesize \leftmark}
-%\fancyhead[R]{\footnotesize \thepage}
-%\renewcommand\headrulewidth{0pt}
-%\fancyfoot[R]{\small College of Engineering Trivandrum}
-%\renewcommand\footrulewidth{0.1pt}
-%\fancyfoot[C]{2020 - 2021}
-%\fancyfoot[L]{\small \title}
+\newcommand{\UseFont}[1]{\fontfamily{#1}\selectfont}
+
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead{}
+% \renewcommand\headrulewidth{0.1pt}
+% \fancyhead[L]{\footnotesize \leftmark}
+% \fancyhead[R]{\footnotesize \thepage}
+% \renewcommand\headrulewidth{0pt}
+% \fancyfoot[R]{\small Fakultet Informatike i\\Digitalnih Tehnologija}
+% \renewcommand\footrulewidth{0.1pt}
+% \fancyfoot[C]{2022 - 2023}
+% \fancyfoot[L]{\small \title}
 
 \begin{document}
 
-\bibliography{ref}
+\thispagestyle{empty}
+\begin{titlepage}
+	\begin{center}
+		\vspace*{20pt}
+		{\UseFont{phv} \Large \bf \title \par}
+		{\large \em \UseFont{pzc} za kolegij \UseFont{phv} \class}\\ [.15\baselineskip] \par
+
+		\vspace{\stretch{0.3}}
+
+		voditeljica kolegija:\\
+		{\bf \semguide},\\
+		\vspace*{10pt}
+		student:\\
+		{\bf \author}\\
+		\UseFont{ppl} {\bfseries \degree}
+
+		\vspace{\stretch{0.25}}
+		
+		\footnotesize{\bf \university} \par
+		\bf{\date}
+	\end{center}
+\end{titlepage}
 
 \pagenumbering{roman}
 
-\include{cover.tex}
-
-% \include{coverpage}
-
 \tableofcontents
+
 \newpage
 
 \setcounter{page}{1}
@@ -65,14 +93,14 @@ f(x, y) = 2x^3 + 2y^3 - 36xy + 430
 Kako bismo mogli odrediti ekstreme multivarijatne funkcije, potrebno je odrediti domenu funkcije.
 
 Zatim je potrebno odrediti parcijalnu derivaciju prvog reda multivarijatne funkcije,
-pri čemu (u ovom slučaju) koristimo pravila deriviranja:
+pri čemu (u ovom slučaju) koristimo pravila deriviranja \cite{mzi}:
 
 \begin{align}
     (c)' &= 0 \text{ i }\\
     (x^a)' &= ax^{a-1}.
 \end{align}
 
-, i pravilo o deriviranju zbroja:
+, i pravilo o deriviranju zbroja \cite{mzi}:
 
 \begin{equation}
     (f + g)' = f' + g'.
@@ -98,27 +126,22 @@ Za računanje Hessove matrice također nam je potrebna derivacija $f$ po $x$ i $
     \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial}{\partial y} (\frac{\partial f}{\partial x}).
 \end{equation}
 
-
-Za neku funkciju $f(x_1, x_2, \dots, x_n)$, Hessova matrica je definirana kao\\
-
+Za neku funkciju $f(x, y)$, Hessova matrica je definirana kao
 $\mathbf{H}(f(\mathbf{x, y})) = \mathbf{J}(\nabla f(\mathbf{x, y}))$,
-
-a gradijent funkcije $f$ ($\nabla f(\mathbf{x, y})$):
+gdje je gradijent ($\nabla$) funkcije $f$:
 
 \begin{equation}
-    \nabla f(p) = \begin{bmatrix}
-        \frac{\partial f}{\partial x_1}(p) \\
-        \vdots \\
-        \frac{\partial f}{\partial x_n}(p)
-       \end{bmatrix}
+    \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
+        \frac{\partial f}{\partial x} \\
+        \frac{\partial f}{\partial y}
+    \end{bmatrix}
 \end{equation}
 
+Dakle Hessova matrica funkcije $f(x, y)$ je:
 \begin{equation}
     \mathbf H_f= \begin{bmatrix}
-        \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\[2.2ex]
-        \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\[2.2ex]
-        \vdots & \vdots & \ddots & \vdots \\[2.2ex]
-        \dfrac{\partial^2 f}{\partial x_n\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}
+        \dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2}\\
+        \dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2}
     \end{bmatrix}.
 \end{equation}
 
@@ -267,7 +290,7 @@ Korištenjem \verb|numpy| i \verb|matplotlib| biblioteka u Pythonu, pomoću slje
     plt.show()
 \end{verbatim}
 
-\noindent\makebox[\textwidth]{\includegraphics[width=300px]{graf}}
+\noindent\makebox[\textwidth]{\includegraphics[width=300px]{f_graph}}
 \newpage
 
 \chapter{Zaključak}
@@ -277,6 +300,6 @@ Korištenjem \verb|numpy| i \verb|matplotlib| biblioteka u Pythonu, pomoću slje
 \pagenumbering{roman}
 \setcounter{page}{2}
 
-\def\bibname{Literatura}
-\printbibliography
+\printbibliography[heading=bibintoc,title=Literatura]
+
 \end{document}
