@@ -1,0 +1,126 @@
+\chapter{Razrada}
+
+S obzirom da je zadana multivarijatna funkcija polinom, tj. racionalna je, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
+Dakle domena funkcije je skup svih realnih brojeva:
+$$
+    D(f) = \mathbb{R} \times \mathbb{R} = \mathbb{R}^2
+$$
+
+\section{Parcijalne derivacije prvog reda}
+
+\begin{align*}
+    \frac{\partial f}{\partial x} & = \frac{\partial}{\partial x} (2x^3 + 2y^3 - 36xy + 430) \\
+    & = \frac{\partial}{\partial x} 2x^3 + \frac{\partial}{\partial x}2y^3 - \frac{\partial}{\partial x}36xy + \frac{\partial}{\partial x}430 \\
+    & = 6x^2 + 0 - 36y + 0 \\
+    & = 6x^2 - 36y \\
+    \\
+    \frac{\partial f}{\partial y} & = \frac{\partial}{\partial y} (2x^3 + 2y^3 - 36xy + 430) \\
+    & = \frac{\partial}{\partial y} 2x^3 + \frac{\partial}{\partial y}2y^3 - \frac{\partial}{\partial y}36xy + \frac{\partial}{\partial y}430 \\
+    & = 0 + 6y^2 - 36x + 0\\
+    & = 6y^2 - 36x
+\end{align*}
+
+\section{title}
+
+\section{Ekstremi}
+
+$$
+\begin{cases}
+    6x^2 - 36y = 0 \\
+    6y^2 - 36x = 0
+\end{cases}
+$$
+
+Izrazimo $y$ iz prvog izraza,
+\begin{align*}
+    6x^2 - 36y &= 0 \\
+    36y & = 6x^2 \\
+    y & = \frac{6x^2}{36} = \frac{x^2}{6} \\
+\end{align*}
+
+te ga uvrstimo u drugi:
+\begin{align*}
+    6(\frac{x^2}{6})^2 - 36x & = 0 \\
+    x^4 - 36x & = 0
+\end{align*}
+
+, jedno rješenje $x_1 = 0$ dobivamo izlučivanjem $x$a iz izraza:
+\begin{align*}
+    x(x^3 - 36) &= 0 \\
+    x_1 &= 0
+\end{align*}
+
+drugi član umnoška nam daje drugo rješenje:
+\begin{align*}
+    x^3 - 36 &= 0 \\
+    x^3 &= 36 \\
+    x &= \sqrt[3]{36} \\
+    x_2 &= \sqrt[3]{36},
+\end{align*}
+
+zbog duplog pojavljivanja $x$a u zadanom polinomu se radi o funkciji simetričnoj s obzirom na ishodište te trebamo tretirati drugo rješenje kao da je njegov predznak uklonjen.
+
+Tom logikom dobivamo 3 rješenja sustava:
+\begin{center}
+\begin{tabular}{c c c}
+    $x_1 = 0$ & $x_2 = \sqrt[3]{36}$ & $x_3 = -\sqrt[3]{36}$\\
+\end{tabular}
+\end{center}
+
+\begin{align*}
+    6x^2 - 36y &= 0\\
+    6(\sqrt[3]{36})^2 - 36y &= 0\\
+    36y &= 6(\sqrt[3]{36^2})\\
+    6y &= \sqrt[3]{36^2} \\
+    y &= \frac{\sqrt[3]{6^4}}{6} \\
+    y &= 6^{\frac{4}{3}} * 6^{-1} = 6^{\frac{4}{3}} * 6^{-\frac{3}{3}} = 6^{\frac{4}{3} - \frac{3}{3}} \\
+    y &= \sqrt[3]6 \\
+\end{align*}
+
+\begin{center}
+\begin{tabular}{c c}
+    $x$ & $y$ \\
+    $0$ & $0$ \\
+    $\sqrt[3]{36}$ & $\sqrt[3]6$ \\
+    $-\sqrt[3]{36}$ & $-\sqrt[3]6$ \\
+\end{tabular}
+\end{center}
+
+\section{Parcijalne derivacije drugog reda}
+
+\begin{align*}
+    \frac{\partial^2 f}{\partial x^2} & = \frac{\partial}{\partial x} (6x^2 - 36y)\\
+    & = \frac{\partial}{\partial x} 6x^2 - \frac{\partial}{\partial x} 36y\\
+    & = 12x - 0\\
+    & = 12x\\
+    \\
+    \frac{\partial^2 f}{\partial y^2} & = \frac{\partial}{\partial x} (6y^2 - 36x)\\
+    & = \frac{\partial}{\partial y} 6y^2 - \frac{\partial}{\partial y} 36x\\
+    & = 12y - 0\\
+    & = 12y\\
+    \\
+    \frac{\partial^2 f}{\partial x \partial y} & = \frac{\partial}{\partial y} (6x^2 - 36y) \\
+    & = \frac{\partial}{\partial y} 6x^2 - \frac{\partial}{\partial y} 36y \\
+    & = 0 - 36 \\
+    & = -36
+\end{align*}
+
+Određujemo vrijednost druge parcijalne derivacije svake stacionarne točke kako bi mogli odrediti Hessovu matricu:
+
+$$H_f = \begin{bmatrix} 12x & -36 \ -36 & 12y \end{bmatrix}$$
+
+Određujemo svojstvene vrijednosti Hessove matrice za svaku stacionarnu točku:
+
+%\begin{itemize}
+%    \item Za (0, 0), svojstvene vrijednosti su 0 i 12; dobivena stacionarna točka sedlasta.
+%    \item Za (3, 3), svojstvene vrijednosti su 12 i 12; stacionarna točka je lokalni maksimum.
+%    \item Za (-3, -3), svojstvene vrijednosti su 12 i 12; stacionarna točka je lokalni minimum.
+%\end{itemize}
+
+%Dakle, na osnovu prethodnog računa zaključujemo da su ekstremi funkcije $2x^3 + 2y^3 - 36xy + 430$ točke
+%\begin{itemize}
+%    \item (3, 3) kao lokalni maksimum
+%    \item i (-3, -3) kao lokalni minimum.
+%\end{itemize}
+
+\newpage

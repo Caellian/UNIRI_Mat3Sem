@@ -1,0 +1,42 @@
+\chapter{Uvod}
+
+Potrebno je odrediti ekstreme i nacrtati funkciju:
+\begin{equation}
+f(x, y) = 2x^3 + 2y^3 - 36xy + 430
+\end{equation}
+
+Bitno je odrediti domenu funkcije na početku kako bismo uspješno i smisleno odredili ekstreme funkcije jer mogu postojati samo unutar njene domene.
+
+Kako bismo mogli odrediti ekstreme funkcije, potrebno je odrediti nulte točke gradijenta ($\nabla$) funkcije $f$ \cite{ccalc}:
+\begin{equation}
+    \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
+        \frac{\partial f}{\partial x} \\
+        \frac{\partial f}{\partial y}
+    \end{bmatrix}\textnormal{,}
+\end{equation}
+
+rješavajući sustav jednadžbi:
+\begin{equation}
+    \nabla f(\mathbf{x}, \mathbf{y}) = 0\\
+    \begin{cases}
+        \frac{\partial f}{\partial x} = 0 \\
+        \frac{\partial f}{\partial y} = 0 \textnormal{,}
+    \end{cases}
+\end{equation}
+
+gdje su rješenje nulte točke funkcije, tj. ekstremi funkcije.
+
+Za određivanje parcijalne derivacije prvog reda multivarijatne funkcije koristimo pravila deriviranja \cite{kolegij}:
+
+\begin{align}
+    (c)' &= 0 \text{ i }\\
+    (x^a)' &= ax^{a-1}\\
+    (f + g)' &= f' + g' \textnormal{.}
+\end{align}
+
+\vspace*{20pt}
+
+Crtanje će biti izvedeno koristeći \verb|numpy| i \verb|matplotlib| biblioteke u Python programskom jeziku.
+\verb|numpy|eva dokumentacija\cite{numpy_doc} i \verb|matplotlib|ova specifikacija sučelja za programiranje aplikacija (engl. API Specification) \cite{mpl_api}, te upute za korištenje \cite{mpl_ug}, koji su dostupni putem interneta.
+
+\newpage
