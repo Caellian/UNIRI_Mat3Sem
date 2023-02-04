@@ -20,7 +20,9 @@ $$
     & = 6y^2 - 36x
 \end{align*}
 
-\section{title}
+\section{Gradijent funkcije}
+
+Određujemo gradijent funkcije ()
 
 \section{Ekstremi}
 
@@ -67,6 +69,8 @@ Tom logikom dobivamo 3 rješenja sustava:
 \end{tabular}
 \end{center}
 
+Za $x_1 = 0$, $y$ će biti 0. $y_1$ i $y_2$ računamo izjednačavajući dobivene vrijednosti sa jednom od parcijalnih derivacija:
+
 \begin{align*}
     6x^2 - 36y &= 0\\
     6(\sqrt[3]{36})^2 - 36y &= 0\\
@@ -74,8 +78,10 @@ Tom logikom dobivamo 3 rješenja sustava:
     6y &= \sqrt[3]{36^2} \\
     y &= \frac{\sqrt[3]{6^4}}{6} \\
     y &= 6^{\frac{4}{3}} * 6^{-1} = 6^{\frac{4}{3}} * 6^{-\frac{3}{3}} = 6^{\frac{4}{3} - \frac{3}{3}} \\
-    y &= \sqrt[3]6 \\
+    y &= \sqrt[3]6
 \end{align*}
+
+Time utvrđujemo da su ekstremi funkcije $f$:
 
 \begin{center}
 \begin{tabular}{c c}
@@ -85,42 +91,5 @@ Tom logikom dobivamo 3 rješenja sustava:
     $-\sqrt[3]{36}$ & $-\sqrt[3]6$ \\
 \end{tabular}
 \end{center}
-
-\section{Parcijalne derivacije drugog reda}
-
-\begin{align*}
-    \frac{\partial^2 f}{\partial x^2} & = \frac{\partial}{\partial x} (6x^2 - 36y)\\
-    & = \frac{\partial}{\partial x} 6x^2 - \frac{\partial}{\partial x} 36y\\
-    & = 12x - 0\\
-    & = 12x\\
-    \\
-    \frac{\partial^2 f}{\partial y^2} & = \frac{\partial}{\partial x} (6y^2 - 36x)\\
-    & = \frac{\partial}{\partial y} 6y^2 - \frac{\partial}{\partial y} 36x\\
-    & = 12y - 0\\
-    & = 12y\\
-    \\
-    \frac{\partial^2 f}{\partial x \partial y} & = \frac{\partial}{\partial y} (6x^2 - 36y) \\
-    & = \frac{\partial}{\partial y} 6x^2 - \frac{\partial}{\partial y} 36y \\
-    & = 0 - 36 \\
-    & = -36
-\end{align*}
-
-Određujemo vrijednost druge parcijalne derivacije svake stacionarne točke kako bi mogli odrediti Hessovu matricu:
-
-$$H_f = \begin{bmatrix} 12x & -36 \ -36 & 12y \end{bmatrix}$$
-
-Određujemo svojstvene vrijednosti Hessove matrice za svaku stacionarnu točku:
-
-%\begin{itemize}
-%    \item Za (0, 0), svojstvene vrijednosti su 0 i 12; dobivena stacionarna točka sedlasta.
-%    \item Za (3, 3), svojstvene vrijednosti su 12 i 12; stacionarna točka je lokalni maksimum.
-%    \item Za (-3, -3), svojstvene vrijednosti su 12 i 12; stacionarna točka je lokalni minimum.
-%\end{itemize}
-
-%Dakle, na osnovu prethodnog računa zaključujemo da su ekstremi funkcije $2x^3 + 2y^3 - 36xy + 430$ točke
-%\begin{itemize}
-%    \item (3, 3) kao lokalni maksimum
-%    \item i (-3, -3) kao lokalni minimum.
-%\end{itemize}
 
 \newpage
