@@ -1,6 +1,6 @@
 \chapter{Razrada}
 
-S obzirom da je zadana funkcija $f$ (1.1) racionalna, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
+S obzirom da je zadana funkcija \eqref{f_def} racionalna, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
 Dakle domena funkcije je skup svih realnih brojeva:
 $$
     D(f) = \mathbb{R} \times \mathbb{R} = \mathbb{R}^2
@@ -8,7 +8,7 @@ $$
 
 \section{Parcijalne derivacije prvog reda}
 
-Kako bismo odredili gradijent funkcije $f$, trebamo prvo odrediti parcijalne derivacije te funkcije po $x$ i $y$, pri čemu se služimo pravilima 1.4, 1.5 i 1.6:
+Kako bismo odredili gradijent funkcije \eqref{f_def}, trebamo prvo odrediti parcijalne derivacije te funkcije po $x$ i $y$, pri čemu se služimo pravilima \eqref{rule_const}, \eqref{rule_exp} i \eqref{rule_sum}:
 
 \begin{align*}
     \frac{\partial f}{\partial x} & = \frac{\partial}{\partial x} (2x^3 + 2y^3 - 36xy + 430) \\
@@ -22,7 +22,7 @@ Kako bismo odredili gradijent funkcije $f$, trebamo prvo odrediti parcijalne der
     & = 6y^2 - 36x \textnormal{.}
 \end{align*}
 
-S obzirom da je domena zadane funkcije $f$ skup svih realnih brojeva, ne trebamo isključiti rješenja iz dobivenih izraza.
+S obzirom da je domena zadane funkcije \eqref{f_def} skup svih realnih brojeva, ne trebamo isključiti rješenja iz dobivenih izraza.
 
 \section{Crtanje grafa u Pythonu}
 
@@ -76,11 +76,14 @@ U našem slučaju se radi o $100\times100$ nizevima nalik na:
     &[-10,\space-9.8,\dots,\space9.8,\space10]]
 \end{align*}
 
-\verb|NumPy| nam dozvoljava simboličko izražavanje funkcija, pa za računanje \verb|Z| vrijednosti grafa, tj. rezultata funkcije $f$ koji su nam potrebni za crtanje grafa, možemo koristiti:
+\verb|NumPy| nam dozvoljava simboličko izražavanje funkcija,
+pa za računanje \verb|Z| vrijednosti grafa, tj. rezultata funkcije \eqref{f_def} koji su nam
+potrebni za crtanje grafa, možemo koristiti:
 \begin{minted}{python}
 Z = 2*X**3 + 2*Y**3 - 36*X*Y + 430
 \end{minted}
-, što će generirati novi dvodimenzionalni niz (dimenzija $100\times100$) koji zadovoljava jednadžbu funkcije 1.1.\par
+, što će generirati novi dvodimenzionalni niz (dimenzija $100\times100$) s vrijednostima
+funkcije \nameref{f_def} za sve uvrštene kombinacije $x$ i $y$ vrijednosti.\par
 To je jedina linija koda koju moramo mjenjati za crtanje različitih grafova u ovom slučaju.\par
 \verb|NumPy| u pozadini računa sve vrijednosti rezultirajućeg dvodimenzionalnog niza za sve odgovarajuće
 parove\footnote{Parovi u rezultatu su usklađeni na osnovu stupca i retka} \verb|X| i \verb|Y| vrijednosti,
@@ -108,7 +111,7 @@ Z = 2*X**3 + 2*Y**3 - 36*X*Y + 430
 Može se koristiti za stvaranje dijagrama stupčastih grafova, linijskih grafova, grafova raspršenja, pogrešnih traka,
 histograma, dijagrama kružnica, dijagrama kutije i mnogih drugih vrsta vizualizacija.
 
-U napisanom kodu stvaramo novu figuru \footnote{Figura (engl. Figure) je u Matplotlib biblioteci cijelokupni prostor za crtanje koji može sadržavati jedan ili više grafova.} za crtanje
+U napisanom kodu stvaramo novu figuru\footnote{Figura (engl. Figure) je u Matplotlib biblioteci cijelokupni prostor za crtanje koji može sadržavati jedan ili više grafova.} za crtanje
 te ju pohranjujemo u \verb|fig| varijablu:
 \begin{minted}{python}
     fig = plt.figure()
@@ -143,7 +146,7 @@ ax.view_init(elev=zeljenja_elevacija, azim=zeljeni_azimut)
 
 \section{Gradijent funkcije}
 
-Određujemo gradijent funkcije $f$ uz dobivene parcijalne derivacije na osnovu formule 1.2:
+Određujemo gradijent funkcije \eqref{f_def} uz dobivene parcijalne derivacije \eqref{del_f}:
 
 \begin{equation}
     \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
@@ -154,8 +157,8 @@ Određujemo gradijent funkcije $f$ uz dobivene parcijalne derivacije na osnovu f
 
 \section{Ekstremi}
 
-Gradijent 2.1 izjednačujemo s nulom kako bi mu odredili nulte točke tj. ekstreme funkcije.
-To možemo izraziti kao sustav (1.3):
+Gradijent \eqref{del_f} izjednačujemo s nulom kako bi mu odredili nulte točke tj. ekstreme funkcije.
+To možemo izraziti kao sustav \eqref{del_f_sys}:
 
 $$
 \begin{cases}
@@ -168,7 +171,7 @@ Izrazimo $y$ iz prvog izraza,
 \begin{align*}
     6x^2 - 36y &= 0 \\
     36y & = 6x^2 \\
-    y & = \frac{6x^2}{36} = \frac{x^2}{6} \\
+    y & = \frac{6x^2}{36} = \frac{x^2}{6}
 \end{align*}
 
 te ga uvrštavamo u drugi kako bismo dobili jednadžbu za $x$eve nultih točaka gradijenta:
@@ -215,7 +218,7 @@ Za $x_1 = 0$, $y_1$ će biti $0$. $y_2$ i $y_3$ računamo uvrštavajući dobiven
     y &= \sqrt[3]6
 \end{align*}
 
-Time utvrđujemo da su ekstremi funkcije $f$:
+Time utvrđujemo da su ekstremi funkcije \eqref{f_def}:
 
 \begin{center}
 \begin{tabular}{c | c}
