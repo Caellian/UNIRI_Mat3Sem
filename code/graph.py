@@ -12,10 +12,10 @@ def f():
     return 2*X**3 + 2*Y**3 - 36*X*Y + 430
 
 def f_der_x():
-    return 6 * X**2 - 36 * Y
+    return 6*X**2 - 36*Y
 
 def f_der_y():
-    return 6 * Y**2 - 36 * X
+    return 6*Y**2 - 36*X
 
 def save_figure(of, path, z_label='z', font_size='medium', angle=[-60, 30]):
     fig = plt.figure()

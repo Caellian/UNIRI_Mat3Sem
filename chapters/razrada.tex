@@ -44,7 +44,7 @@ import numpy
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 \end{minted}
-, izvođenjem tih linija koda možemo pristupiti vanjskom koda u našim programima.
+, izvođenjem tih linija koda možemo pristupiti vanjskom kodu u našim programima.
 
 \subsection{NumPy}
 
@@ -187,6 +187,7 @@ Promjenom vrijednosti \verb|Z|, parametara \verb|ax|, i ciljane datoteke možemo
 Određujemo gradijent \eqref{del_f} funkcije \eqref{f_def} uz dobivene parcijalne derivacije:
 
 \begin{equation}
+    \label{del_f_value}
     \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
         6x^2 - 36y \\
         6y^2 - 36x
@@ -195,7 +196,7 @@ Određujemo gradijent \eqref{del_f} funkcije \eqref{f_def} uz dobivene parcijaln
 
 \section{Ekstremi}
 
-Gradijent \eqref{del_f} izjednačujemo s nulom kako bi mu odredili nulte točke tj. ekstreme funkcije.
+Gradijent \eqref{del_f_value} izjednačujemo s nulom kako bi mu odredili nulte točke tj. ekstreme funkcije.
 To možemo izraziti kao sustav \eqref{del_f_sys}:
 
 $$
