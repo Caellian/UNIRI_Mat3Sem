@@ -4,7 +4,7 @@
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-                "-shell-escape",              // <---- added this line
+                "-shell-escape",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",

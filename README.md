@@ -1,2 +1,1 @@
-- [instructions](upute_seminar.pdf)
 - [latest render](seminar.pdf)

@@ -137,7 +137,7 @@ $$
 
 U slučaju da želimo izmjeniti kut projekcije, to možemo postignuti korištenjem \verb|Axes3D.view_init()| funkcije:
 \begin{minted}{python}
-    ax.view_init(azim=zeljeni_azimut, elev=zeljenja_elevacija)
+    ax.view_init(azim=azimut, elev=elevacija)
 \end{minted}
 
 Kako bismo nakon podešavanja grafa \verb|ax| ga konstruirali i nacrtali, potrebno je koristiti \verb|Axes3D.plot_surface(X, Y, Z)| funkciju za crtanje ravnina:
@@ -145,7 +145,7 @@ Kako bismo nakon podešavanja grafa \verb|ax| ga konstruirali i nacrtali, potreb
     ax.plot_surface(X, Y, Z)
 \end{minted}
 
-Funkcije \verb|Axes3D.set_xlabel("x")|, \verb|Axes3D.set_ylabel("y")| i \verb|Axes3D.set_zlabel("z")| nam dozvoljavaju imenovanje $x$, $y$ i $z$ osi, sukladno redoslijedu:
+Funkcije \verb|Axes3D.set_xlabel("x")|, \verb|Axes3D.set_ylabel("y")| i\\\verb|Axes3D.set_zlabel("z")| nam dozvoljavaju imenovanje $x$, $y$ i $z$ osi, sukladno redoslijedu:
 \begin{minted}{python}
     ax.set_xlabel('x')
     ax.set_ylabel('y')
@@ -164,19 +164,18 @@ Korištenjem \verb|pyplot.savefig("putanja/do/datoteke.png")| možemo spremiti s
 Pokretanjem napisanog koda dobivamo graf:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{graf_f}
+    \includegraphics[width=400pt]{figures/graf_f.png}
     \caption{Graf zadane funkcije \eqref{f_def}}
 \end{figure}
 
-Promjenom vrijednosti \verb|Z|a kao što je prethodno nevedeno, parametara,
-i ciljane datoteke možemo nacrtati slike ostalih grafova, tj. grafove parcijalnih derivacija funkcije po $x$ i $y$:
+Promjenom vrijednosti \verb|Z|, parametara \verb|ax|, i ciljane datoteke možemo nacrtati i grafove parcijalnih derivacija funkcije po $x$ i $y$:
 \begin{figure}[H]
     \begin{subfigure}{0.5\linewidth}
-        \includegraphics[width=\linewidth]{graf_fdx}
+        \includegraphics[width=200pt]{figures/graf_fdx.png}
         \caption{Parcijalna derivacije funkcije po $x$}
     \end{subfigure}%
     \begin{subfigure}{0.5\linewidth}
-        \includegraphics[width=\linewidth]{graf_fdy}
+        \includegraphics[width=200pt]{figures/graf_fdy.png}
         \caption{Parcijalna derivacije funkcije po $y$}
     \end{subfigure}
     \caption{Grafovi parcijalnih derivacija}

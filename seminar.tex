@@ -1,11 +1,11 @@
-% !TEX TS-program = pdftex
+% !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8
 % !BIB program = biber
 
 \documentclass[12pt,a4paper]{report}
 
-\usepackage{graphicx} % \includegraphics [k=v] interface za uključivanje grafike (slika, PDFa, ...)
-\usepackage{bookmark} % generira ToC za PDF
+% generira bookmarkove
+\usepackage{bookmark}
 
 % Podrška za hrvatski
 \usepackage[croatian]{babel}
@@ -19,17 +19,21 @@
 \usepackage{mathtools}
 \usepackage{subcaption} % side-by-side grafovi
 
+% Podrška za slike
+\usepackage{graphicx} % \includegraphics [k=v] interface
+
 % Poveznice
-\usepackage{cleveref}
 \usepackage{hyperref}
 
 % Blokovi s kodom
 \usepackage{minted}
+\ifx\write18\relax\else
 \usemintedstyle{sas}
+\fi
 
 % Literatura
 \usepackage[sorting=none,backend=biber,style=numeric]{biblatex}
-\addbibresource{ref.bib}
+\addbibresource{seminar.bib}
 
 % Fonts:
 \usepackage[T1]{fontenc} % Allows specifying fonts
@@ -47,8 +51,6 @@ Rijeka
 \gdef \semguide{dr.sc. Marija Maksimović}
 \gdef \author{Tin Švagelj}
 \gdef \date{\today}
-
-\graphicspath{{./figures/}}
 
 % Custom commands and redefinitions
 \newcommand{\UseFont}[1]{\fontfamily{#1}\selectfont}
@@ -76,8 +78,8 @@ Rijeka
 \begin{titlepage}
 	\begin{center}
 		\vspace*{\stretch{0.25}}
-		{\UseFont{phv} \Large \bf \title \par}
-		{\large \em \UseFont{pzc} za kolegij \UseFont{phv} \class}\\ [.15\baselineskip] \par
+		{\UseFont{phv} \Large \bf \title}\par
+		{\large {\em \UseFont{pzc} iz kolegija}\par\UseFont{phv}\class}\\ [.15\baselineskip] \par
 
 		\vspace*{\stretch{0.3}}
 
