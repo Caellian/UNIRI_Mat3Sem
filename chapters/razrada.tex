@@ -206,66 +206,57 @@ $$
 \end{cases}
 $$
 
-Izrazimo $y$ iz prvog izraza,
+Izrazimo $y$ iz prve jednadžbe sustava,
 \begin{align*}
     6x^2 - 36y &= 0 \\
-    36y & = 6x^2 \\
-    y & = \frac{6x^2}{36} = \frac{x^2}{6}
+    36y &= 6x^2 \\
+    y &= \frac{6x^2}{36} = \frac{x^2}{6}
 \end{align*}
 
-te ga uvrštavamo u drugi kako bismo dobili jednadžbu za $x$eve nultih točaka gradijenta:
+te $y$ substituiramo u drugu jednadžbu kako bismo dobili jednadžbu za $x$eve nultih točaka gradijenta:
 \begin{align}
-    6(\frac{x^2}{6})^2 - 36x & = 0 \nonumber \\
-    x^4 - 36x & = 0 \textnormal{.}
+    6(\frac{x^2}{6})^2 - 36x &= 0 \nonumber \\
+    \frac{x^4}{6} - 36x &= 0 \nonumber \\
+    x^4 - 6^3x &= 0 \label{del_fx_zeros}
 \end{align}
 
 Jedno rješenje ($x_1$) uočavamo nakon izlučivanja $x$a iz izraza:
 \begin{align*}
-    x(x^3 - 36) &= 0 \\
+    x(x^3 - 6^3) &= 0 \\
     x_1 &= 0 \textnormal{.}
 \end{align*}
 
-Zaključujemo da je jedno rješenje $x_1 = 0$ jer ako je $x$ jednak nuli, onda će jednadžba 2.2 vrijediti. \par
+Zaključujemo da je jedno rješenje $x_1 = 0$ jer ako je $x$ jednak nuli, onda će jednadžba za $x$ nultih točaka gradijenta \eqref{del_fx_zeros} vrijediti. \par
 
 Drugi član umnoška nam daje drugo rješenje:
 \begin{align*}
-    x^3 - 36 &= 0 \\
-    x^3 &= 36 \\
-    x &= \sqrt[3]{36} \textnormal{,}
+    x^3 - 6^3 &= 0 \\
+    x^3 &= 6^3 \\
+    x &= \sqrt[3]{6^3} = 6 \textnormal{,}
 \end{align*}
 
-ali zbog duplog pojavljivanja $x$a u zadanom polinomu se radi o funkciji simetričnoj s obzirom na ishodište te je zbog toga dobiveno rješenje zapravo dvojno rješenje:
-
-$$
-x_{2,3} = \pm \sqrt[3]{36} \textnormal{.}
-$$
-
-Time dobivamo 3 rješenja sustava za $x$:
+Time dobivamo 2 rješenja sustava za $x$:
 \begin{gather*}
-    x_1 = 0 \qquad x_2 = \sqrt[3]{36} \qquad x_3 = -\sqrt[3]{36}
+    x_1 = 0 \qquad x_2 = 6
 \end{gather*}
 
-Za $x_1 = 0$, $y_1$ će biti $0$. $y_2$ i $y_3$ računamo uvrštavajući dobivene vrijednosti za $x$ sa jednom od parcijalnih derivacija:
+Za $x_1 = 0$, $y_1$ će biti $0$. $y_2$ računamo uvrštavajući dobivene vrijednosti $x_2$ u jednu od parcijalnih derivacija:
 
 \begin{align*}
     6x^2 - 36y &= 0\\
-    6(\sqrt[3]{36})^2 - 36y &= 0\\
-    36y &= 6(\sqrt[3]{36^2})\\
-    6y &= \sqrt[3]{36^2} \\
-    y &= \frac{\sqrt[3]{6^4}}{6} \\
-    y &= 6^{\frac{4}{3}} * 6^{-1} = 6^{\frac{4}{3}} * 6^{-\frac{3}{3}} = 6^{\frac{4}{3} - \frac{3}{3}} \\
-    y &= \sqrt[3]6
+    6^3 - 36y &= 0\\
+    36y &= 6^3\\
+    y &= 6
 \end{align*}
 
-Time utvrđujemo da su ekstremi funkcije \eqref{f_def}:
+Time utvrđujemo da su realni ekstremi funkcije \eqref{f_def}:
 
 \begin{center}
 \begin{tabular}{c | c}
     $x$ & $y$ \\
     \hline
     $0$ & $0$ \\
-    $\sqrt[3]{36}$ & $\sqrt[3]6$ \\
-    $-\sqrt[3]{36}$ & $-\sqrt[3]6$ \\
+    $6$ & $6$ \\
 \end{tabular}
 \end{center}
 
