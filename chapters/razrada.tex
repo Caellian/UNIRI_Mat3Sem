@@ -24,6 +24,7 @@ Kako bismo odredili gradijent funkcije \eqref{f_def}, trebamo prvo odrediti parc
 
 S obzirom da je domena zadane funkcije \eqref{f_def} skup svih realnih brojeva, ne trebamo isključiti rješenja iz dobivenih izraza.
 
+\newpage
 \section{Crtanje grafa u Pythonu}
 
 Za crtanje, kao što je već navedeno u uvodu, koristimo \verb|NumPy| i \verb|Matplotlib|.
@@ -44,15 +45,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 \end{minted}
 , izvođenjem tih linija koda možemo pristupiti vanjskom koda u našim programima.
-
-
-Često se koriste aliasi za sažimanje duljih imena modula koji se učestalo pojavljuju u kodu:
-
-\begin{minted}{python}
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-\end{minted}
 
 \subsection{NumPy}
 
@@ -79,6 +71,7 @@ U našem slučaju se radi o $100\times100$ nizevima nalik na:
     &[-10,\space-9.8,\dots,\space9.8,\space10]]
 \end{align*}
 
+\newpage
 \verb|NumPy| nam dozvoljava simboličko izražavanje funkcija,
 pa za računanje \verb|Z| vrijednosti grafa, tj. rezultata funkcije \eqref{f_def} koji su nam
 potrebni za crtanje grafa, možemo koristiti:
@@ -108,6 +101,7 @@ Sada kada imamo sve vrijednosti koje funkcija poprima, možemo koristiti \verb|M
 Z = 2*X**3 + 2*Y**3 - 36*X*Y + 430
 \end{minted}
 
+\newpage
 \subsection{Matplotlib}
 
 \verb|Matplotlib| pruža funkcije za crtanje širokog raspona statičkih, animiranih i interaktivnih vizualizacija.
@@ -165,7 +159,9 @@ Korištenjem \verb|pyplot.savefig("putanja/do/datoteke.png")| možemo spremiti s
 
 \newpage
 
-Tim postupkom dobivamo graf:
+\subsection{Grafovi funkcija}
+
+Pokretanjem napisanog koda dobivamo graf:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{graf_f}
@@ -186,6 +182,7 @@ i ciljane datoteke možemo nacrtati slike ostalih grafova, tj. grafove parcijaln
     \caption{Grafovi parcijalnih derivacija}
 \end{figure}
 
+\newpage
 \section{Gradijent funkcije}
 
 Određujemo gradijent funkcije \eqref{f_def} uz dobivene parcijalne derivacije \eqref{del_f}:
