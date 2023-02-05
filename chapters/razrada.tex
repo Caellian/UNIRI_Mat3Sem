@@ -1,6 +1,6 @@
 \chapter{Razrada}
 
-S obzirom da je zadana funkcija \eqref{f_def} racionalna, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][stranica 119]{kolegij}.
+S obzirom da je zadana funkcija \eqref{f_def} racionalna, važeća je za svaki $x \in \mathbb{R}$ i $y \in \mathbb{R}$ \cite[vidi][119]{kolegij}.
 Dakle domena funkcije je skup svih realnih brojeva:
 $$
     D(f) = \mathbb{R} \times \mathbb{R} = \mathbb{R}^2
@@ -67,7 +67,7 @@ U našem slučaju se radi o $100\times100$ nizevima nalik na:
 \begin{align*}
     X = Y^T = [&[-10,\space-9.8,\dots,\space9.8,\space10],\\
     &[-10,\space-9.8,\dots,\space9.8,\space10],\\
-    &\hspace*{0.15\linewidth}\vdots\\
+    &\hspace*{0.14\linewidth}\vdots\\
     &[-10,\space-9.8,\dots,\space9.8,\space10]]
 \end{align*}
 
@@ -79,22 +79,23 @@ potrebni za crtanje grafa, možemo koristiti:
 Z = 2*X**3 + 2*Y**3 - 36*X*Y + 430
 \end{minted}
 , što će generirati novi dvodimenzionalni niz (dimenzija $100\times100$) s vrijednostima
-funkcije \nameref{f_def} za sve uvrštene kombinacije $x$ i $y$ vrijednosti.\par
-To je jedina linija koda koju moramo mjenjati za crtanje različitih grafova u ovom slučaju.\par
+funkcije \eqref{f_def} za sve uvrštene kombinacije $x$ i $y$ vrijednosti.\par
+To je jedina linija koda koju moramo mjenjati za crtanje različitih grafova u ovom slučaju.
+\bigskip
+
 \verb|NumPy| u pozadini računa sve vrijednosti rezultirajućeg dvodimenzionalnog niza za sve odgovarajuće
 parove\footnote{Parovi u rezultatu su usklađeni na osnovu stupca i retka} \verb|X| i \verb|Y| vrijednosti,
 tj. za sve kombinacije \verb|x| i \verb|y| vrijednosti.
 
-Time dobivamo dvodimenzionalni niz svih vrijednosti koje funkcija može poprimiti za sve kombinacije $x$ i $y$ u intervalima $[-10, 10]$:
-$$
-{{f(x,y) \mid x \in [-10, 10]} \mid y \in [-10, 10]}
-$$
+Time dobivamo dvodimenzionalni niz svih vrijednosti koje funkcija može poprimiti za sve kombinacije $x$ i $y$ u intervalima $[-10, 10]$.
+\bigskip
 
 Razlog zašto možemo na tako prirodan način izraziti operacije nad multidimenzionalnim nizovima pomoću \verb|NumPy|a je zato što su
 \verb|X| i \verb|Y| apstraktne reprezentacije nizeva za koje su definirani\footnote{Definirani kao preoptrećenja operatora u Pythonu} svi matematički operatori koje Python podržava za normalne brojeve.\par
 Tako da nam \verb|X**3| prvo daje novi niz gdje je svaki element/broj iz niza \verb|X| eksponenciran brojem $3$.
 Zatim je izraz \verb|2*X**3| evaluiran i zbog množenja rezultata sa $2$, \verb|NumPy| množi sve elemente niza sa $2$.
 Na kraju vrši binarne operacije nad samim nizovima gdje dobivamo rješenja polinoma za cijeli izraz, te će taj rezultatski niz biti pohranjen u \verb|Z|.
+\bigskip
 
 Sada kada imamo sve vrijednosti koje funkcija poprima, možemo koristiti \verb|Matplotlib| za crtanje grafa. Za početak stvaramo 
 \begin{minted}{python}
@@ -191,7 +192,7 @@ Određujemo gradijent \eqref{del_f} funkcije \eqref{f_def} uz dobivene parcijaln
     \nabla f(\mathbf{x}, \mathbf{y}) = \begin{bmatrix}
         6x^2 - 36y \\
         6y^2 - 36x
-    \end{bmatrix}\textnormal{,}
+    \end{bmatrix}
 \end{equation}
 
 \section{Ekstremi}

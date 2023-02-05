@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import os
+
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -30,6 +32,31 @@ def save_figure(of, path, z_label='z', font_size='medium', angle=[-60, 30]):
 
     plt.savefig(path)
 
-save_figure(f(), 'figures/graf_f.png', z_label='$f(x, y)$', angle=[-70, 30])
-save_figure(f_der_x(), 'figures/graf_fdx.png', z_label='$\\frac{\\partial f}{\\partial x}$', font_size='xx-large', angle=[60, 30])
-save_figure(f_der_y(), 'figures/graf_fdy.png', z_label='$\\frac{\\partial f}{\\partial y}$', font_size='xx-large', angle=[60, 30])
+def main():
+    figure_path = os.path.abspath(os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            '..', 'figures'
+        ))
+    
+    save_figure(
+        f(),
+        os.path.join(figure_path, 'graf_f.png'),
+        z_label='$f(x, y)$',
+        angle=[-70, 30]
+        )
+    save_figure(
+        f_der_x(),
+        os.path.join(figure_path, 'graf_fdx.png'),
+        z_label='$\\frac{\\partial f}{\\partial x}$',
+        font_size='xx-large',
+        angle=[60, 30]
+        )
+    save_figure(
+        f_der_y(),
+        os.path.join(figure_path, 'graf_fdy.png'),
+        z_label='$\\frac{\\partial f}{\\partial y}$',
+        font_size='xx-large', angle=[60, 30]
+        )
+
+if __name__ == "__main__":
+    main()
