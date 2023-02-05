@@ -111,8 +111,8 @@ Z = 2*X**3 + 2*Y**3 - 36*X*Y + 430
 Može se koristiti za stvaranje dijagrama stupčastih grafova, linijskih grafova, grafova raspršenja, pogrešnih traka,
 histograma, dijagrama kružnica, dijagrama kutije i mnogih drugih vrsta vizualizacija.
 
-U napisanom kodu stvaramo novu figuru\footnote{Figura (engl. Figure) je u Matplotlib biblioteci cijelokupni prostor za crtanje koji može sadržavati jedan ili više grafova.} za crtanje
-te ju pohranjujemo u \verb|fig| varijablu:
+Figura (engl. Figure) je u Matplotlib biblioteci cijelokupni prostor za crtanje koji može sadržavati jedan ili više grafova.
+U napisanom kodu stvaramo novu figuru za crtanje te ju pohranjujemo u \verb|fig| varijablu:
 \begin{minted}{python}
     fig = plt.figure()
 \end{minted}
@@ -120,7 +120,7 @@ te ju pohranjujemo u \verb|fig| varijablu:
 Stvaramo 3D podgraf unutar figure i pohranjujemo ga u \verb|ax| varijablu:
 
 \begin{minted}{python}
-fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(111, projection='3d')
 \end{minted} 
 
 Prvi argument (\verb|111|) određuje poziciju podgrafa unutar figure:
@@ -135,12 +135,12 @@ Argument (\verb|projection|) specificira projekciju grafa, s obzirom da se radi 
 Potrebno je navesti projekciju jer je zadana vrijednost \verb|'rectilinear'| koja je zapravo ortogonalna projekcija usmjerena u ravninu s rješenjima $z = 0$ i koristi se za crtanje dvodimenzionalnih grafova.
 Argumentom \verb|'3d'| navodimo da očekujemo ortogonalnu projekciju trodimenzionalnog grafa, koja gleda u smjeru:
 $$
-\vec{v} = (\text{\it azimut}, \text{\it elevacija}) = (-60^{\circ}, 30^{\circ})
+    \vec{v} = (\text{\it azimut}, \text{\it elevacija}) = (-60^{\circ}, 30^{\circ})
 $$
 
 U slučaju da želimo izmjeniti kut projekcije, to možemo postignuti korištenjem \verb|mpl_toolkits.mplot3d.axes3d.Axes3D.view_init()| funkcije:
 \begin{minted}{python}
-ax.view_init(elev=zeljenja_elevacija, azim=zeljeni_azimut)
+    ax.view_init(elev=zeljenja_elevacija, azim=zeljeni_azimut)
 \end{minted}
 , no rezultati dobiveni zadanim vrijednostima su dovoljno jasni pa to nije potrebno u ovom slučaju.
 
