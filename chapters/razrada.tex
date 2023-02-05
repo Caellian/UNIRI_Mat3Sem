@@ -32,13 +32,18 @@ Za crtanje, kao što je već navedeno u uvodu, koristimo \verb|NumPy| i \verb|Ma
 
 \verb|NumPy| omogućava podršku za rad s velikim, višedimenzionalnim poljima i matricama, zajedno sa širokim spektrom visoko-razinskih matematičkih funkcija.\par
 
+Za početak rada je potrebno instalirati \verb|NumPy| i \verb|Matplotlib| pokretanjem \verb|pip install| naredbe u terminalu ili naredbenom retku:
+\begin{minted}{shell}
+    pip install --user numpy matplotlib
+\end{minted}
+
 Na početku svakog programa moramo uključiti potrebne module sa sljedećim kodom\cite[][naslov 5.4.2. Submodules]{py_lang_ref}:
 \begin{minted}{python}
 import numpy
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 \end{minted}
-
+, izvođenjem tih linija koda možemo pristupiti vanjskom koda u našim programima.
 
 
 Često se koriste aliasi za sažimanje duljih imena modula koji se učestalo pojavljuju u kodu:
@@ -50,8 +55,6 @@ from mpl_toolkits.mplot3d import Axes3D
 \end{minted}
 
 \subsection{NumPy}
-
-, izvođenjem tih linija koda će Python omogučiti korištenje vanjskog koda u našim programima.
 
 Stvaramo jednodimenzionalne nizove (polja) od $100$ uniformno razmaknutih vrijednosti između $-10$ i $10$:
 \begin{minted}{python}
@@ -138,11 +141,50 @@ $$
     \vec{v} = (\text{\it azimut}, \text{\it elevacija}) = (-60^{\circ}, 30^{\circ})
 $$
 
-U slučaju da želimo izmjeniti kut projekcije, to možemo postignuti korištenjem \verb|mpl_toolkits.mplot3d.axes3d.Axes3D.view_init()| funkcije:
+U slučaju da želimo izmjeniti kut projekcije, to možemo postignuti korištenjem \verb|Axes3D.view_init()| funkcije:
 \begin{minted}{python}
-    ax.view_init(elev=zeljenja_elevacija, azim=zeljeni_azimut)
+    ax.view_init(azim=zeljeni_azimut, elev=zeljenja_elevacija)
 \end{minted}
-, no rezultati dobiveni zadanim vrijednostima su dovoljno jasni pa to nije potrebno u ovom slučaju.
+
+Kako bismo nakon podešavanja grafa \verb|ax| ga konstruirali i nacrtali, potrebno je koristiti \verb|Axes3D.plot_surface(X, Y, Z)| funkciju za crtanje ravnina:
+\begin{minted}{python}
+    ax.plot_surface(X, Y, Z)
+\end{minted}
+
+Funkcije \verb|Axes3D.set_xlabel("x")|, \verb|Axes3D.set_ylabel("y")| i \verb|Axes3D.set_zlabel("z")| nam dozvoljavaju imenovanje $x$, $y$ i $z$ osi, sukladno redoslijedu:
+\begin{minted}{python}
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_zlabel('$f(x,y)$')
+\end{minted}
+
+Korištenjem \verb|pyplot.savefig("putanja/do/datoteke.png")| možemo spremiti slike grafa u datotečnom sustavu:
+\begin{minted}{python}
+    plt.savefig("figures/graf_f.png")
+\end{minted}
+
+\newpage
+
+Tim postupkom dobivamo graf:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{graf_f}
+    \caption{Graf zadane funkcije \eqref{f_def}}
+\end{figure}
+
+Promjenom vrijednosti \verb|Z|a kao što je prethodno nevedeno, parametara,
+i ciljane datoteke možemo nacrtati slike ostalih grafova, tj. grafove parcijalnih derivacija funkcije po $x$ i $y$:
+\begin{figure}[H]
+    \begin{subfigure}{0.5\linewidth}
+        \includegraphics[width=\linewidth]{graf_fdx}
+        \caption{Parcijalna derivacije funkcije po $x$}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\linewidth}
+        \includegraphics[width=\linewidth]{graf_fdy}
+        \caption{Parcijalna derivacije funkcije po $y$}
+    \end{subfigure}
+    \caption{Grafovi parcijalnih derivacija}
+\end{figure}
 
 \section{Gradijent funkcije}
 
