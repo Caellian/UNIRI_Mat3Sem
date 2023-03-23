@@ -12,7 +12,7 @@
 \usepackage{csquotes}
 
 % Margine
-\usepackage[left=3.5cm,top=1.5cm,right=3cm,bottom=4cm]{geometry}
+\usepackage[left=3cm,top=2.5cm,right=2.5cm,bottom=3.5cm]{geometry}
 
 % Simboli i naredbe za matematiku
 \usepackage{amsmath, amsthm, amssymb}
@@ -40,15 +40,11 @@
 \usepackage{helvet} % Helvetica; phv
 \usepackage{palatino} % Palatino; ppl
 
-\gdef \title{Seminarski rad}
+\gdef \title{Problemski zadatak}
 \gdef \class{Matematika 3}
 \gdef \author{Tin Švagelj}
-\gdef \uniprogram{Jednopredmetna Informatika}
-\gdef \university{
-Fakultet Informatike i Digitalnih Tehnologija\\
-Rijeka
-}
-\gdef \semguide{dr.sc. Marija Maksimović}
+\gdef \uniprogram{Preddimplski studij informatike}
+\gdef \semguide{Prof. dr. sc. Marija Maksimović}
 \gdef \author{Tin Švagelj}
 \gdef \date{\today}
 
@@ -56,8 +52,8 @@ Rijeka
 \newcommand{\UseFont}[1]{\fontfamily{#1}\selectfont}
 
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Large}
+\titleformat{\chapter}[hang]
+{\normalfont\Large\bfseries}{\thechapter}{20pt}{\Large}
 
 % \usepackage{fancyhdr}
 % \pagestyle{fancy}
@@ -75,27 +71,7 @@ Rijeka
 
 \thispagestyle{empty}
 
-\begin{titlepage}
-	\begin{center}
-		\vspace*{\stretch{0.25}}
-		{\UseFont{phv} \Large \bf \title}\par
-		{\large {\em \UseFont{pzc} iz kolegija}\par\UseFont{phv}\class}\\ [.15\baselineskip] \par
-
-		\vspace*{\stretch{0.3}}
-
-		voditeljica kolegija:\\
-		{\bf \semguide},\\
-		\vspace*{10pt}
-		student:\\
-		{\bf \author}\\
-		\UseFont{ppl} {\bfseries \uniprogram}
-
-		\vspace*{\stretch{0.25}}
-		
-		\footnotesize{\bf \university} \par
-		\bf{\date}
-	\end{center}
-\end{titlepage}
+\include{titlepage.tex}
 
 \pagenumbering{roman}
 
